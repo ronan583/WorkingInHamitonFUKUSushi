@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fuku Sushi Hamilton</title>
+  <!-- 响应式视口设置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXXXX-X');
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Employed in FUKU Sushi YOU WILL...</h1>
+  </header>
+
+  <main>
+    <section class="announcement">
+      <h2>公告主题</h2>
+      <p>
+        I am a former employee at FUKU Sushi. I am here to expose the migrant exploitation happened there.
+
+The employees there do not have all the minimum legal rights:  </p>
+      <h2>No Valid Employment Agreement</h2>
+
+<p>
+Firstly, there was no valid employment agreement. I asked for one at the beginning. The boss or manager(he didn't formally tell me or any other employees who the manager was until he was trying to make an accusation against me after I had worked there for a year, all the employees thought the team "leader" was the manager and he was the boss), gave me a "CASUAL" employment agreement to sign without signing it himself. Additionally, there was no copy provided for me—he only allowed me to take a photo of it.
+
+Other employees didn't have an agreement neither.
+
+My actual job was to work Monday through Friday, no less than six hours a day starting at 7 a.m., but the agreement required employees to be available between 7 a.m. and 3 a.m. with no guaranteed minimum hours. This essentially meant employees had to keep their hours open every workday, giving the boss(manager) the power to cut your hours without notice or inform you to leave two minutes before it was supposed to end. It also gave him the power to fire anyone at will because it was labeled as "casual." Employees were doing non-casual work while employer only fulfilled the responsibilities of a casual employer. It was an unfair agreement.
+
+I initially wanted to sign the agreement the next day I got the agreement without being aware of lawful knowledge above. What happened was the boss took the unsigned agreement away before I mentioned about signing agreement. I was unaware of my legal right to have an agreement provided by my employer. As a result, I worked for almost a year without signing any formal agreement.
+
+Regarding "reasonable steps" in the agreement, employees had no say. Even if you had an important meeting with your professor, the boss wouldn't consider it "reasonable." He would order you not to leave, causing you to be late for quite a long time and risk your academic progress. This happened to one of my colleagues.
+
+Again, this was called as casual employment.  </p>
+      <h2>No Legal Break Times</h2>
+<p>
+Secondly, employees were not given legal break times for shifts longer than six hours. Sometimes, during a nine-hour shift, I only got a 20-minute paid lunch break.
+
+According to the law:
+More than 6 hours, but less than 10 hours worked:
+1 x 10-minute paid rest break
+1 x 30-minute unpaid meal break
+1 x 10-minute paid rest break
+
+I lacked a 30-minute break every workday for an entire year.  </p>
+      <h2>No Legal Sick Leave</h2>
+<p>
+
+Thirdly, there was no legal sick leave. I had asked for sick leave but received no pay. In fact, the boss made employees feel uncomfortable and guilty for even considering requesting leave, as I mentioned above regarding "reasonable steps."
+
+The above are unquestionably illegal practices, and I have sufficient evidence to support them.
+      </p>
+
+    </section>
+
+    <section class="useful-section">
+      <button id="usefulBtn">Useful</button>
+      <p><span id="usefulCount">0</span></p>
+<!--       <p class="tips">
+        本示例采用 <code>localStorage</code> 限制同一浏览器的重复点击，但无法真正基于
+        IP 做全局限制。
+      </p> -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright © 2025 My Company</p>
+  </footer>
+
+  <script>
+    const LOCAL_STORAGE_KEY = 'my-static-site-useful-count';
+    const LOCAL_STORAGE_KEY_CLICKED = 'my-static-site-useful-clicked';
+
+    const usefulCountEl = document.getElementById('usefulCount');
+    const usefulBtn = document.getElementById('usefulBtn');
+
+    let currentCount = localStorage.getItem(LOCAL_STORAGE_KEY) 
+                      ? parseInt(localStorage.getItem(LOCAL_STORAGE_KEY), 10)
+                      : 0;
+    usefulCountEl.innerText = currentCount;
+
+    let hasClicked = localStorage.getItem(LOCAL_STORAGE_KEY_CLICKED) === 'true';
+    if (hasClicked) {
+      usefulBtn.disabled = true;
+      usefulBtn.innerText = '你已标记过“有用”';
+    }
+
+    usefulBtn.addEventListener('click', () => {
+      if (hasClicked) return;
+
+      currentCount += 1;
+      localStorage.setItem(LOCAL_STORAGE_KEY, currentCount.toString());
+      localStorage.setItem(LOCAL_STORAGE_KEY_CLICKED, 'true');
+      usefulCountEl.innerText = currentCount;
+      usefulBtn.disabled = true;
+      usefulBtn.innerText = 'You have marked this.';
+      hasClicked = true;
+    });
+  </script>
+</body>
+</html>
